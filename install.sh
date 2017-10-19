@@ -28,12 +28,12 @@ install_vundle() {
     [ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle
 
     # Install Vundle if does not exist
-    if [[ -d "~/.vim/bundle/Vundle.vim" ]]; then
+    if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
         git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        vim -c 'PluginInstall' -c 'qa!'
     else
         printf "\e[0;33m  [✔] Vundle already installed\e[0m\n"
     fi
+    vim -c 'PluginInstall' -c 'qa!'
 }
 
 # Warn user this script will overwrite current dotfiles
