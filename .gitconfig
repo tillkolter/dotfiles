@@ -1,0 +1,10 @@
+[user]
+	name = Till Kolter
+	email = till.kolter@gmail.com
+[push]
+	default = simple
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

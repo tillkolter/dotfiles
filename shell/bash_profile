@@ -1,0 +1,62 @@
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
+# Note: PS1 and umask are already set in /etc/profile. You should not
+# need this unless you want different defaults for root.
+
+parse_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    }
+
+PS1='\[$(tput setaf 65)\]\u@\[$(tput setaf 245)\]\h:\[$(tput setaf 208)\]\w\[$(tput setaf 1)\]$(parse_git_branch)\[$(tput sgr0)\] $ '
+# umask 022
+
+# You may uncomment the following lines if you want `ls' to be colorized:
+# export LS_OPTIONS='--color=auto'
+# eval "`dircolors`"
+
+source ~/.autoenv/activate.sh
+
+export LD_LIBRARY_PATH=/usr/lib
+
+export CONSCRIPT_HOME="$HOME/.conscript"
+export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
+export PATH=$CONSCRIPT_HOME/bin:$PATH
+
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export SCALA_HOME=/usr/local/share/scala
+export PATH=$PATH:$SCALA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+export PATH=/usr/local/php5/bin:$PATH
+export PATH=/Library/PostgreSQL/9.3/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+export GOPATH=$HOME/go
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export JAVA_OPTS="-Xmx4G -Xms1024m"
+
+# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Bonus track: SSH autocompleting hostnames, write ssh and press tab
+complete -W "$(while read line; do echo ${line%%[, ]*}; done < ~/.ssh/known_hosts)" ssh
+
+# git log
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold magenta)%Creset' --abbrev-commit"
+
+test -f ~/.git-completion.bash && . $_
+test -f /usr/local/etc/bash_completion.d
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# SCALA
+export SBT_OPTS="-Xmx4G -Xms2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M  -Duser.timezone=GMT"
+
+source /usr/local/opt/autoenv/activate.sh
+
