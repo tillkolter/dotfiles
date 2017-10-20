@@ -7,6 +7,8 @@ set shiftwidth=4
 set switchbuf=usetab
 set expandtab
 set tabstop=4
+set number
+
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 nnoremap <C-Left> :tabprevious<CR>
@@ -14,6 +16,10 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nnoremap <C-T> :tabfind<CR>n 'scrooloose/nerdcommenter'
+nmap <C-J> <C-W>j<C-W>_
+nmap <C-K> <C-W>k<C-W>_
+nmap <c-h> <c-w>h<c-w><Bar>
+nmap <c-l> <c-w>l<c-w><Bar>
 
 let mapleader = ","
 
