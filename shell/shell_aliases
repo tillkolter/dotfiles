@@ -11,7 +11,7 @@ alias oye-server-update='~/.scripts/update-oye-server.sh'
 # Some more alias to avoid making mistakes:
 alias rm='rm -i'
 alias cp='cp -i'
-alias mv='mv -i
+alias mv='mv -i'
 
 # OS X specific aliases
 alias redisstart='sudo launchctl start io.redis.redis-server'

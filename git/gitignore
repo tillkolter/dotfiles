@@ -27,5 +27,6 @@ npm-debug.log
 # IDEs stuff
 .idea
 
-
+# PHP Composer
+vendor
 

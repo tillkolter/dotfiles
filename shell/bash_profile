@@ -60,3 +60,6 @@ export SBT_OPTS="-Xmx4G -Xms2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEna
 
 source /usr/local/opt/autoenv/activate.sh
 
+for file in $HOME/.{shell_exports,shell_aliases,shell_functions,shell_config}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
