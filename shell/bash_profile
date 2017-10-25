@@ -63,3 +63,8 @@ source /usr/local/opt/autoenv/activate.sh
 for file in $HOME/.{shell_exports,shell_aliases,shell_functions,shell_config}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
+
+# Install local aliases
+local_aliases=~/.local_aliases
+[ -r "$local_aliases" ] && [ -f "$local_aliases" ] && source "$local_aliases";
+
