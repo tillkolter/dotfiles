@@ -23,18 +23,26 @@ print_success() {
 }
 
 install_vundle() {
-    printf "\e[0;33m Checking Vundle installation\e[0m\n"
+    printf "\e[0;33m Checking Vundle installation\e[0m"
 
     [ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle
 
     # Install Vundle if does not exist
     if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
         git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    else
-        printf "\e[0;33m  [✔] Vundle already installed\e[0m\n"
-    fi
+    fi 
+    printf "\e[0;32m  [✔]\e[0m\n"
     vim -c 'PluginInstall' -c 'qa!'
 }
+
+install_autoenv() {
+    printf "\e[0;33m Checking autoenv installation\e[0m"   
+    if [ ! -d ~/.autoenv ]; then 
+        git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
+    fi
+    printf "\e[0;32m  [✔]\e[0m\n"
+}
+
 
 # Warn user this script will overwrite current dotfiles
 while true; do
@@ -128,7 +136,9 @@ main() {
   done
 
   unset FILES_TO_SYMLINK
+  install_autoenv
   install_vundle
+  source ~/.bashrc
 }
 
 main
