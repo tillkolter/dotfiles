@@ -34,6 +34,9 @@ install_vundle() {
         printf "\e[0;33m  [✔] Vundle already installed\e[0m\n"
     fi
     vim -c 'PluginInstall' -c 'qa!'
+    
+    [ ! -d ~/.vim/after ] && mkdir ~/.vim/after
+    cp -r vim/after/* ~/.vim/after/
 }
 
 # Warn user this script will overwrite current dotfiles
