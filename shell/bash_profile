@@ -29,6 +29,7 @@ export PATH=$PATH:$SCALA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-too
 
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/Library/PostgreSQL/9.3/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:/opt/apache-maven/bin
 
 export GOPATH=$HOME/go
 
