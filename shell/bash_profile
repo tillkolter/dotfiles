@@ -11,12 +11,6 @@ parse_git_branch() {
 PS1='\[$(tput setaf 65)\]\u@\[$(tput setaf 245)\]\h:\[$(tput setaf 208)\]\w\[$(tput setaf 1)\]$(parse_git_branch)\[$(tput sgr0)\] $ '
 # umask 022
 
-# You may uncomment the following lines if you want `ls' to be colorized:
-# export LS_OPTIONS='--color=auto'
-# eval "`dircolors`"
-
-source ~/.autoenv/activate.sh
-
 export LD_LIBRARY_PATH=/usr/lib
 
 export CONSCRIPT_HOME="$HOME/.conscript"
@@ -39,7 +33,11 @@ export NVM_DIR="$HOME/.nvm"
 
 export JAVA_OPTS="-Xmx4G -Xms1024m"
 
+# Alexa Skill Kit
+export ASK_DEFAULT_PROFILE=ask-cli
+
 # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+#
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
