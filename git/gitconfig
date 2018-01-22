@@ -99,3 +99,8 @@
 
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold magenta)%Creset' --abbrev-commit
+[push]
+	default = matching
+[user]
+	email = till.kolter@gmail.com
+	name = Till Kolter
