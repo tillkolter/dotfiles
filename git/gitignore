@@ -35,3 +35,5 @@ vendor
 
 # Atom sync plugin
 .remote-sync.json
+
+*.pickle
