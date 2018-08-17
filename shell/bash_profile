@@ -47,6 +47,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 test -f ~/.git-completion.bash && . $_
 test -f /usr/local/etc/bash_completion.d
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
