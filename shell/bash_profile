@@ -24,12 +24,16 @@ export PATH=$PATH:$SCALA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-too
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/Library/PostgreSQL/9.3/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/apache-maven/bin
+export PATH=$PATH:~/.local/bin/
 
 export GOPATH=$HOME/go
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Setting used for IDEA terminal -> load the right nvm if nvmrc exists 
+[ -s "$PWD/.nvmrc" ] && nvm use
 
 export JAVA_OPTS="-Xmx4G -Xms1024m"
 
