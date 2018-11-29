@@ -108,4 +108,4 @@
 	name = Till Kolter
 	email = till.kolter@gmail.com
 [push]
-	default = matching
+	default = simple
