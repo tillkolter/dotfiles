@@ -17,6 +17,8 @@ export CONSCRIPT_HOME="$HOME/.conscript"
 export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
 export PATH=$CONSCRIPT_HOME/bin:$PATH
 
+export GOPATH=$HOME/go
+
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export SCALA_HOME=/usr/local/share/scala
 export PATH=$PATH:$SCALA_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
@@ -25,8 +27,8 @@ export PATH=/usr/local/php5/bin:$PATH
 export PATH=/Library/PostgreSQL/9.3/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/apache-maven/bin
 export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-export GOPATH=$HOME/go
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -67,3 +69,7 @@ done;
 local_aliases=~/.local_aliases
 [ -r "$local_aliases" ] && [ -f "$local_aliases" ] && source "$local_aliases";
 
+
+[[ -s "/Users/tkolter/.gvm/scripts/gvm" ]] && source "/Users/tkolter/.gvm/scripts/gvm"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

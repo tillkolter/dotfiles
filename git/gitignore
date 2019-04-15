@@ -37,3 +37,6 @@ vendor
 .remote-sync.json
 
 *.pickle
+
+.nvmrc
+
