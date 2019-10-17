@@ -30,13 +30,12 @@ npm-debug.log
 # PHP Composer
 vendor
 
-# ENV Files
-.env
-
 # Atom sync plugin
 .remote-sync.json
 
 *.pickle
 
 .nvmrc
+.history
 
+*code-workspace

@@ -9,31 +9,30 @@ set expandtab
 set tabstop=4
 set number
 
-nnoremap <F8> :sbnext<CR>
-nnoremap <S-F8> :sbprevious<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
-nnoremap <C-T> :tabfind<CR>n 'scrooloose/nerdcommenter'
-nmap <C-J> <C-W>j<C-W>_
-nmap <C-K> <C-W>k<C-W>_
-nmap <c-h> <c-w>h<c-w><Bar>
-nmap <c-l> <c-w>l<c-w><Bar>
-
 let mapleader = ","
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dracula/vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'prettier/vim-prettier'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'w0rp/ale'
+
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'beanworks/vim-phpfmt'
-Plugin 'hdima/python-syntax'
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'scrooloose/nerdcommenter'
+" Plugin 'beanworks/vim-phpfmt'
+" Plugin 'hdima/python-syntax'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -43,19 +42,34 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
-Plugin 'cakebaker/scss-syntax.vim'
+" Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
+" Plugin 'cakebaker/scss-syntax.vim'
 " git repos on your local machine (i.e. when working on your own plugin)
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+
+noremap <F8> :sbnext<CR>
+noremap <S-F8> :sbprevious<CR>
+noremap <C-Left> :tabprevious<CR>
+noremap <C-Right> :tabnext<CR>
+noremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+noremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+noremap <C-T> :tabfind<CR>n 'scrooloose/nerdcommenter'
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <c-h> <c-w>h<c-w><Bar>
+map <c-l> <c-w>l<c-w><Bar>
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on

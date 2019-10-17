@@ -73,3 +73,6 @@ local_aliases=~/.local_aliases
 [[ -s "/Users/tkolter/.gvm/scripts/gvm" ]] && source "/Users/tkolter/.gvm/scripts/gvm"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+complete -C '~/.local/bin/aws_completer' aws
+
