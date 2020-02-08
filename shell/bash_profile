@@ -75,4 +75,7 @@ local_aliases=~/.local_aliases
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 complete -C '~/.local/bin/aws_completer' aws
+source <(kubectl completion bash)
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
